@@ -61,9 +61,9 @@ class BatchController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $batch = Batch::find($id);
+        $batches = Batch::find($id);
         $input = $request->all();
-        $batch->update($input);
+        $batches->update($input);
         return redirect('batch')->with('flash_message', 'batch Updated!');
     }
 
