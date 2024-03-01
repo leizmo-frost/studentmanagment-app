@@ -51,7 +51,7 @@ class StudentController extends Controller
     public function edit(string $id): View
     {
         $student = \App\Models\Student::find($id);
-        return view('students.edit')->with('students', $student);
+        return view('students.edit')->with('student', $student);
     }
 
     /**

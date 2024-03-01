@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\http\RedirectResponse;
+use Illuminate\Http\Response;
+use App\Models\Enrollment;
+use Illuminate\View\View;
 
 class EnrollmentController extends Controller
 {
@@ -12,7 +16,8 @@ class EnrollmentController extends Controller
      */
     public function index()
     {
-        //
+        $enrollments= Enrollment::all();
+        return view ('enrollments.index')->with('enrollments', $enrollments);
     }
 
     /**
@@ -20,7 +25,7 @@ class EnrollmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('enrollments.create');
     }
 
     /**
@@ -28,7 +33,9 @@ class EnrollmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Enrollment::create($input);
+        return redirect('enrollments')->with('flash_message', 'enrollments Addedd!');
     }
 
     /**
@@ -36,7 +43,8 @@ class EnrollmentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $enrollments = Enrollment::find($id);
+        return view('enrollments.show')->with('enrollments', $enrollments);
     }
 
     /**
@@ -44,7 +52,8 @@ class EnrollmentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $enrollments = Enrollment::find($id);
+        return view('enrollments.edit')->with('enrollment', $enrollments);
     }
 
     /**
@@ -52,7 +61,10 @@ class EnrollmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $enrollments = Enrollment::find($id);
+        $input = $request->all();
+        $enrollments->update($input);
+        return redirect('enrollments')->with('flash_message', 'enrollment Updated!');
     }
 
     /**
@@ -60,6 +72,7 @@ class EnrollmentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Enrollment::destroy($id);
+        return redirect('enrollments')->with('flash_message', 'enrollment deleted!');
     }
 }
