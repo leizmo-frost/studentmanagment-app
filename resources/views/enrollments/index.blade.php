@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h2>Enrollments Application</h2>
+            <h2>Enrollment Application</h2>
         </div>
         <div class="card-body">
             <a href="{{ url('/enrollments/create') }}" class="btn btn-success btn-sm" title="Add New Course">
