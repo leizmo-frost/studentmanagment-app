@@ -53,7 +53,7 @@ class EnrollmentController extends Controller
     public function edit(string $id)
     {
         $enrollments = Enrollment::find($id);
-        return view('enrollments.edit')->with('enrollment', $enrollments);
+        return view('enrollments.edit')->with('enrollments', $enrollments);
     }
 
     /**
