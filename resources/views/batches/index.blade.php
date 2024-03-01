@@ -6,7 +6,7 @@
             <h2>Batches</h2>
         </div>
         <div class="card-body">
-            <a href="{{ url('/batch/create') }}" class="btn btn-success btn-sm" title="Add New batch">
+            <a href="{{ url('/batches/create') }}" class="btn btn-success btn-sm" title="Add New Batch">
                 <i class="fa fa-plus" aria-hidden="true"></i> Add New
             </a>
             <br/>

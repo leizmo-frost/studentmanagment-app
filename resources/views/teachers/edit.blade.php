@@ -14,7 +14,7 @@
         <label>Address</label></br>
         <input type="text" name="address" id="address" value="{{$Teachers->address}}" class="form-control"></br>
         <label>Mobile</label></br>
-        <input type="text" name="mobile" id="mobile" value="{{$Teachers->mobile}}" class="form-control"></br>
+        <input type="tel" name="mobile" id="mobile" value="{{$Teachers->mobile}}" class="form-control"></br>
         <input type="submit" value="Update" class="btn btn-success"></br>
     </form>
 
