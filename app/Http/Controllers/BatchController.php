@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\http\RedirectResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use \App\Models\Batch;
@@ -35,7 +35,7 @@ class BatchController extends Controller
     {
         $input = $request->all();
         Batch::create($input);
-        return redirect('students')->with('flash_message', 'batch Addedd!');
+        return redirect('batches')->with('flash_message', 'batch Addedd!');
     }
 
     /**
