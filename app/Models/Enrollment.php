@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Enrollment extends Model
 {
-    protected $table = 'enrollment';
+    protected $table = 'enrollments';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'enroll_no', 'batch_id', 'student_id', 'join_date', 'fee'];
+    protected $fillable = [ 'enroll_no', 'batch_id', 'student_id', 'join_date', 'fee'];
     use HasFactory;
 }
