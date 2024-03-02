@@ -2,22 +2,26 @@
 @section('content')
 
 <div class="card">
-  <div class="card-header">Edit Page</div>
+  <div class="card-header">Edit Teacher</div>
   <div class="card-body">
-
-      <form action="{{ url('Teachers/' .$Teachers->id) }}" method="post">
-        {!! csrf_field() !!}
-        @method("PATCH")
-        <input type="hidden" name="id" id="id" value="{{$Teachers->id}}" id="id" />
-        <label>Name</label></br>
-        <input type="text" name="name" id="name" value="{{$Teachers->name}}" class="form-control"></br>
-        <label>Address</label></br>
-        <input type="text" name="address" id="address" value="{{$Teachers->address}}" class="form-control"></br>
-        <label>Mobile</label></br>
-        <input type="tel" name="mobile" id="mobile" value="{{$Teachers->mobile}}" class="form-control"></br>
-        <input type="submit" value="Update" class="btn btn-success"></br>
+    <form action="{{ url('teachers/' .$teacher->id) }}" method="post">
+      @csrf
+      @method("PATCH")
+      <input type="hidden" name="id" value="{{ $teacher->id }}" />
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{ $teacher->name }}" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address" value="{{ $teacher->address }}" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="tel" name="mobile" id="mobile" value="{{ $teacher->mobile }}" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success">Update</button>
     </form>
-
   </div>
 </div>
 

@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\http\RedirectResponse;
-use Illuminate\Http\Response;
-use App\Models\Teacher;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
-use Illuminate\Support\Facades\Log;
+use App\Models\Teacher;
 
 class TeacherController extends Controller
 {
@@ -16,9 +14,10 @@ class TeacherController extends Controller
      */
     public function index(): View
     {
-        $teachers= Teacher::all();
-        return view ('teachers.index')->with('teachers', $teachers);
+        $teachers = Teacher::all();
+        return view('teachers.index', compact('teachers'));
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -30,29 +29,30 @@ class TeacherController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
-    {
-        $input = $request->all();
-        Teacher::create($input);
-        return redirect('teachers')->with('flash_message', 'teacher Addedd!');
-    }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id): view
-    {
-        $teachers = Teacher::find($id);
-        return view('teachers.show')->with('teachers', $teachers);
-    }
+    public function store(Request $request): RedirectResponse
+{
+    $request->validate([
+        'name' => 'required|string|max:255', // Example validation rule for the 'name' field
+        'address' => 'required|string|max:255', // Example validation rule for the 'address' field
+        'mobile' => 'required|string|max:15', // Example validation rule for the 'mobile' field
+        // Add more validation rules for other input fields as needed
+    ]);
+
+    Teacher::create($request->all());
+    return redirect('teachers')->with('flash_message', 'Teacher added!');
+}
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id): View
     {
-        $teachers = Teacher::find($id);
-        return view('teachers.edit')->with('teachers', $teachers);
+        $teacher = Teacher::findOrFail($id);
+        return view('teachers.edit', compact('teacher'));
     }
 
     /**
@@ -60,10 +60,13 @@ class TeacherController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $teachers = Teacher::find($id);
-        $input = $request->all();
-        $teachers->update($input);
-        return redirect('teachers')->with('flash_message', 'teacher Updated!');
+        $request->validate([
+            // Add validation rules for the input fields here
+        ]);
+
+        $teacher = Teacher::findOrFail($id);
+        $teacher->update($request->all());
+        return redirect('teachers')->with('flash_message', 'Teacher updated!');
     }
 
     /**
@@ -72,6 +75,6 @@ class TeacherController extends Controller
     public function destroy(string $id): RedirectResponse
     {
         Teacher::destroy($id);
-        return redirect('teachers')->with('flash_message', 'teacher deleted!');
+        return redirect('teachers')->with('flash_message', 'Teacher deleted!');
     }
 }

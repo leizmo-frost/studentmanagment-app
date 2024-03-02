@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\http\RedirectResponse;
-use Illuminate\Http\Response;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -14,8 +14,8 @@ class StudentController extends Controller
      */
     public function index(): View
     {
-        $students = \App\Models\Student::all();
-        return view ('students.index')->with('students', $students);
+        $students = Student::all();
+        return view('students.index', compact('students'));
     }
 
     /**
@@ -31,18 +31,22 @@ class StudentController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $request->validate([
+            // Add validation rules for the input fields here
+        ]);
+
         $input = $request->all();
-        \App\Models\Student::create($input);
-        return redirect('students')->with('flash_message', 'Student Addedd!');
+        Student::create($input);
+        return redirect('students')->with('flash_message', 'Student added!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id): view
+    public function show(string $id): View
     {
-        $student = \App\Models\Student::find($id);
-        return view('students.show')->with('students', $student);
+        $student = Student::findOrFail($id);
+        return view('students.show', compact('student'));
     }
 
     /**
@@ -50,8 +54,8 @@ class StudentController extends Controller
      */
     public function edit(string $id): View
     {
-        $student = \App\Models\Student::find($id);
-        return view('students.edit')->with('student', $student);
+        $student = Student::findOrFail($id);
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -59,10 +63,13 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $student = \App\Models\Student::find($id);
-        $input = $request->all();
-        $student->update($input);
-        return redirect('students')->with('flash_message', 'student Updated!');
+        $request->validate([
+            // Add validation rules for the input fields here
+        ]);
+
+        $student = Student::findOrFail($id);
+        $student->update($request->all());
+        return redirect('students')->with('flash_message', 'Student updated!');
     }
 
     /**
@@ -70,7 +77,7 @@ class StudentController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        \App\Models\Student::destroy($id);
-        return redirect('student')->with('flash_message', 'Student deleted!');
+        Student::destroy($id);
+        return redirect('students')->with('flash_message', 'Student deleted!');
     }
 }

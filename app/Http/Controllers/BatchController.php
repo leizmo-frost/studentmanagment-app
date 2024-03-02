@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Batch;
+use App\Models\Course;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use \App\Models\Batch;
 use Illuminate\View\View;
 
 class BatchController extends Controller
@@ -14,10 +13,10 @@ class BatchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): view
+    public function index(): View
     {
         $batches = Batch::all();
-        return view ('batches.index')->with('batches', $batches);
+        return view('batches.index', compact('batches'));
     }
 
     /**
@@ -25,7 +24,8 @@ class BatchController extends Controller
      */
     public function create(): View
     {
-        return view('batches.create');
+        $courses = Course::pluck('name', 'id');
+        return view('batches.create', compact('courses'));
     }
 
     /**
@@ -33,9 +33,14 @@ class BatchController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $input = $request->all();
-        Batch::create($input);
-        return redirect('batches')->with('flash_message', 'batch Addedd!');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'course_id' => 'required|exists:courses,id',
+            'start_date' => 'required|date',
+        ]);
+
+        Batch::create($request->all());
+        return redirect('batches')->with('flash_message', 'Batch added!');
     }
 
     /**
@@ -43,8 +48,8 @@ class BatchController extends Controller
      */
     public function show(string $id): View
     {
-        $batches = Batch::find($id);
-        return view('batches.show')->with('batches', $batches);
+        $batch = Batch::findOrFail($id);
+        return view('batches.show', compact('batch'));
     }
 
     /**
@@ -52,8 +57,8 @@ class BatchController extends Controller
      */
     public function edit(string $id): View
     {
-        $batches = Batch::find($id);
-        return view('batches.edit')->with('batches', $batches);
+        $batch = Batch::findOrFail($id);
+        return view('batches.edit', compact('batch'));
     }
 
     /**
@@ -61,10 +66,15 @@ class BatchController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $batches = Batch::find($id);
-        $input = $request->all();
-        $batches->update($input);
-        return redirect('batch')->with('flash_message', 'batch Updated!');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'course_id' => 'required|exists:courses,id',
+            'start_date' => 'required|date',
+        ]);
+
+        $batch = Batch::findOrFail($id);
+        $batch->update($request->all());
+        return redirect('batches')->with('flash_message', 'Batch updated!');
     }
 
     /**
@@ -73,6 +83,6 @@ class BatchController extends Controller
     public function destroy(string $id): RedirectResponse
     {
         Batch::destroy($id);
-        return redirect('batch')->with('flash_message', 'batch deleted!');
+        return redirect('batches')->with('flash_message', 'Batch deleted!');
     }
 }

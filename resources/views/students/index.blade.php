@@ -15,37 +15,59 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Mobile</th>
-                            <th>Actions</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($students as $item)
+                    @foreach($students as $student)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->address }}</td>
-                            <td>{{ $item->mobile }}</td>
+                            <th scope="row">{{ $loop->iteration }}</th>
+                            <td>{{ $student->name }}</td>
+                            <td>{{ $student->address }}</td>
+                            <td>{{ $student->mobile }}</td>
                             <td>
-                                <a href="{{ url('/students/' . $item->id) }}" title="View Student">
+                                <a href="{{ url('/students/' . $student->id) }}" title="View Student">
                                     <button class="btn btn-info btn-sm">
                                         <i class="fa fa-eye" aria-hidden="true"></i> View
                                     </button>
                                 </a>
-                                <a href="{{ url('/students/' . $item->id . '/edit') }}" title="Edit Student">
+                                <a href="{{ url('/students/' . $student->id . '/edit') }}" title="Edit Student">
                                     <button class="btn btn-primary btn-sm">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                     </button>
-                                    <form method="POST" action="{{ url('/students' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                        {{ method_field('DELETE') }}
-                                        {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Student" onclick="return confirm(&quot;Confirm delete?&quot;)">
-                                            <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                    </form>
                                 </a>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ $student->id }}">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                                </button>
+                                <!-- Delete Modal -->
+                                <div class="modal fade" id="deleteModal{{ $student->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $student->id }}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteModalLabel{{ $student->id }}">Confirm Deletion</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to delete this student?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                <form method="POST" action="{{ url('/students/' . $student->id) }}">
+                                                    {{ method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Delete Modal -->
                             </td>
                         </tr>
                     @endforeach

@@ -2,20 +2,24 @@
 @section('content')
 
 <div class="card">
-  <div class="card-header">Teachers Page</div>
+  <div class="card-header">Add Teacher</div>
   <div class="card-body">
-
-      <form action="{{ url('teachers') }}" method="post">
-        {!! csrf_field() !!}
-        <label>Name</label></br>
-        <input type="text" name="name" id="name" class="form-control"></br>
-        <label>Address</label></br>
-        <input type="text" name="address" id="address" class="form-control"></br>
-        <label>Mobile</label></br>
-        <input type="tel" name="mobile" id="mobile" class="form-control"></br>
-        <input type="submit" value="Save" class="btn btn-success"></br>
+    <form action="{{ url('teachers') }}" method="post">
+      @csrf
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" name="address" id="address" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="tel" name="mobile" id="mobile" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success">Save</button>
     </form>
-
   </div>
 </div>
 

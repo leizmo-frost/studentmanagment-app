@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\http\RedirectResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\View\View;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
@@ -15,8 +15,8 @@ class CourseController extends Controller
      */
     public function index(): View
     {
-        $courses =\App\Models\Course::get();
-        return view ('courses.index')->with('courses', $courses);
+        $courses = Course::all();
+        return view('courses.index', compact('courses'));
     }
 
     /**
@@ -32,9 +32,13 @@ class CourseController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $input = $request->all();
-        \App\Models\Course::create($input);
-        return redirect('courses')->with('flash_message', 'courses Addedd!');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            // Add any other validation rules for other fields here
+        ]);
+
+        Course::create($request->all());
+        return redirect('courses')->with('flash_message', 'Course added!');
     }
 
     /**
@@ -42,8 +46,8 @@ class CourseController extends Controller
      */
     public function show(string $id): View
     {
-        $courses = \App\Models\Course::find($id);
-        return view('courses.show')->with('courses', $courses);
+        $course = Course::findOrFail($id);
+        return view('courses.show', compact('course'));
     }
 
     /**
@@ -51,8 +55,8 @@ class CourseController extends Controller
      */
     public function edit(string $id): View
     {
-        $courses = \App\Models\Course::find($id);
-        return view('courses.edit')->with('courses', $courses);
+        $course = Course::findOrFail($id);
+        return view('courses.edit', compact('course'));
     }
 
     /**
@@ -60,10 +64,14 @@ class CourseController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $courses = \App\Models\Course::find($id);
-        $input = $request->all();
-        $courses->update($input);
-        return redirect('courses')->with('flash_message', 'courses Updated!');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            // Add any other validation rules for other fields here
+        ]);
+
+        $course = Course::findOrFail($id);
+        $course->update($request->all());
+        return redirect('courses')->with('flash_message', 'Course updated!');
     }
 
     /**
@@ -71,7 +79,7 @@ class CourseController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        \App\Models\Course::destroy($id);
-        return redirect('courses')->with('flash_message', 'courses deleted!');
+        Course::destroy($id);
+        return redirect('courses')->with('flash_message', 'Course deleted!');
     }
 }
