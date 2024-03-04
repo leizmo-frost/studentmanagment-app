@@ -27,7 +27,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $course->name }}</td>
                         <td>{{ $course->syllabus }}</td>
-                        <td>{{ $course->duration }}</td>
+                        <td>{{ $course->duration() }}</td>
                         <td>
                             <a href="{{ url('/courses/' . $course->id) }}" title="View Course" class="btn btn-info btn-sm">
                                 <i class="fa fa-eye" aria-hidden="true"></i> View
