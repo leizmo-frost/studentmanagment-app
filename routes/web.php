@@ -36,4 +36,5 @@ Route::resource("/enrollments", EnrollmentController::class);
 
 Route::resource("/payments", PaymentController::class);
 
-Route::get('/report/report1/{pid}' , [ReportController::class, 'report1']);
+Route::get('/report/report/{pid}', [ReportController::class, 'report']);
+
