@@ -12,7 +12,7 @@
             margin:0;
             padding:0;
             width:200px;
-            background-color:#ffffff; /* Changed background color to white */
+            background-color:#343a40; /* Changed background color to dark */
             position:fixed;
             height:100%;
             overflow:auto;
@@ -21,7 +21,7 @@
         /* Sidebar links */
         .sidebar a {
             display:block;
-            color:#000000; /* Changed text color to black */
+            color:#ffffff; /* Changed text color to white */
             padding:16px;
             text-decoration:none;
         }
