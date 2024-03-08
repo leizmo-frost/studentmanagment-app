@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h2>Batches</h2>
+        <h2>Payments</h2>
     </div>
     <div class="card-body">
         <a href="{{ url('/payments/create') }}" class="btn btn-success btn-sm" title="Add New payment">
