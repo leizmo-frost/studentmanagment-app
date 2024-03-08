@@ -5,8 +5,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                <div class="card-header bg-primary text-white">
                     <h2 class="text-center">Registration</h2>
                 </div>
                 <div class="card-body">
@@ -33,7 +33,7 @@
                             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Register</button>
                         </div>
                     </form>
                 </div>
@@ -41,8 +41,8 @@
         </div>
         <div class="col-md-6">
             <!-- Login form -->
-            <div class="card mt-4">
-                <div class="card-header">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded mt-4">
+                <div class="card-header bg-primary text-white">
                     <h2 class="text-center">Login</h2>
                 </div>
                 <div class="card-body">
