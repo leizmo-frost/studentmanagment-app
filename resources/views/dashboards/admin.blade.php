@@ -1,3 +1,5 @@
+
+
 <div class="w-full block mt-8">
     <div class="flex flex-wrap sm:flex-no-wrap justify-between">
         <div class="w-full bg-gray-200 text-center border border-gray-300 px-8 py-6 rounded">
@@ -23,7 +25,7 @@
                 <span class="leading-tight">Parents</span>
             </h3>
         </div>
-        
+
     </div>
 </div>
 
@@ -43,6 +45,6 @@
                 <span class="leading-tight">Classes</span>
             </h3>
         </div>
-        
+
     </div>
 </div>

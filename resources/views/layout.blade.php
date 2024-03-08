@@ -84,6 +84,7 @@
                 <!-- The sidebar -->
                 <div class="sidebar">
                     <a class="active" href="#home">Home</a>
+                    <a href="{{ url('/dashboards') }}">Dashboard</a>
                     <a href="{{ url('/students') }}">Student</a>
                     <a href="{{ url('/teachers') }}">Teacher</a>
                     <a href="{{ url('/courses') }}">Courses</a>
