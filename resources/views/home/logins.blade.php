@@ -20,6 +20,14 @@
                             <label for="exampleInputPassword1" class="form-label">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
+                        <div class="col-auto">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
+                              <label class="form-check-label" for="autoSizingCheck2">
+                                Remember me
+                              </label>
+                            </div>
+                          </div>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
                     </form>
                 </div>
