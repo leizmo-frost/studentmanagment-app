@@ -42,6 +42,10 @@ Route::get("/logins", function (){
     return view(view: "home.logins");
 });
 
+Route::get("/registrations", function (){
+    return view(view: "home.registrations");
+});
+
 Route::get("/admin", function (){
     return view(view: "dashboards.admin");
 });

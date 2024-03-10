@@ -17,8 +17,11 @@
                         <tr>
                             <th>#</th>
                             <th>Name</th>
+                            <th>National Id</th>
                             <th>Address</th>
                             <th>Mobile</th>
+                            <th>Position</th>
+                            <th>Subject</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -27,8 +30,11 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $teacher->name }}</td>
+                            <td>{{ $teacher->national_id }}</td>
                             <td>{{ $teacher->address }}</td>
                             <td>{{ $teacher->mobile }}</td>
+                            <td>{{ $teacher->subject }}</td>
+                            <td>{{ $teacher->position }}</td>
                             <td>
                                 <a href="{{ url('/teachers/' . $teacher->id) }}" title="View Teacher">
                                     <button class="btn btn-info btn-sm">

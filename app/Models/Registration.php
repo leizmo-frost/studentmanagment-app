@@ -9,6 +9,6 @@ class Login extends Model
 {
     protected $table = 'registrations';
     protected $primaryKey = 'id';
-    protected $fillable = ['first_name', 'last_name', 'username', 'email', 'password', 'password_confirmation'];
+    protected $fillable = ['first_name', 'last_name', 'email', 'password', 'password_confirmation'];
     use HasFactory;
 }
