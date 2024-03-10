@@ -42,6 +42,18 @@ Route::get("/logins", function (){
     return view(view: "home.logins");
 });
 
-Route::get("/registrations", function (){
-    return view(view: "home.registrations");
+Route::get("/admin", function (){
+    return view(view: "dashboards.admin");
+});
+
+Route::get("/parent", function (){
+    return view(view: "dashboards.parent");
+});
+
+Route::get("/student", function (){
+    return view(view: "dashboards.student");
+});
+
+Route::get("/teacher", function (){
+    return view(view: "dashboards.teacher");
 });
