@@ -17,8 +17,11 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
+                            <th scope="col">School Id</th>
                             <th scope="col">Address</th>
                             <th scope="col">Mobile</th>
+                            <th scope="col">Course</th>
+                            <th scope="col">Class</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -27,8 +30,11 @@
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $student->name }}</td>
+                            <td>{{ $student->school_id }}</td>
                             <td>{{ $student->address }}</td>
                             <td>{{ $student->mobile }}</td>
+                            <td>{{ $student->course }}</td>
+                            <td>{{ $student->class }}</td>
                             <td>
                                 <a href="{{ url('/students/' . $student->id) }}" title="View Student">
                                     <button class="btn btn-info btn-sm">
