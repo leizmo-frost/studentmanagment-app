@@ -12,23 +12,20 @@
                 <div class="card-body">
                     <form>
                         <div class="row g-3">
-                            <div class="col">
-                              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-                            </div>
-                            <div class="col">
-                              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                            <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
                             </div>
                             <div class="col-md-6">
-                                <label for="inputEmail4" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
-                              </div>
-                              <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4">
-                              </div>
+                            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Email" aria-label="Email">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Password" aria-label="Password">
+                            </div>
                         <div class="mb-3">
-                            <label for="password_confirmation" class="form-label">Confirm Password</label>
-                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
+                            <input type="text" class="form-control" placeholder="confirm password" aria-label="confirm Password">
                         </div>
                         <div class="col-auto">
                             <div class="form-check">
@@ -38,7 +35,7 @@
                               </label>
                             </div>
                           </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
                     </form>
                 </div>
             </div>
