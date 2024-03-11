@@ -2,10 +2,10 @@
 @section('content')
 
 <div class="card">
-  <div class="card-header">Edit Page</div>
-  <div class="card-body">
+<div class="card-header">Edit Page</div>
+<div class="card-body">
 
-      <form action="{{ url('enrollments/' .$enrollments->id) }}" method="post">
+    <form action="{{ url('enrollments/' .$enrollments->id) }}" method="post">
         {!! csrf_field() !!}
         @method("PATCH")
         <input type="hidden" name="id" id="id" value="{{$enrollments->id}}" />
@@ -22,7 +22,7 @@
         <input type="submit" value="Save" class="btn btn-success"><br>
     </form>
 
-  </div>
+</div>
 </div>
 
 @stop

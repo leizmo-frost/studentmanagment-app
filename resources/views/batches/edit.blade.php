@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="card">
-  <div class="card-header">Edit Page</div>
-  <div class="card-body">
+<div class="card-header">Edit Page</div>
+<div class="card-body">
 
-      <form action="{{ url('batches/' . $batch->id) }}" method="post">
+    <form action="{{ url('batches/' . $batch->id) }}" method="post">
         @csrf
         @method('PATCH')
         <input type="hidden" name="id" value="{{ $batch->id }}">
@@ -19,7 +19,7 @@
         <input type="submit" value="Update" class="btn btn-success"><br>
     </form>
 
-  </div>
+</div>
 </div>
 
 @stop

@@ -2,25 +2,25 @@
 @section('content')
 
 <div class="card">
-  <div class="card-header">Enrollments Page</div>
-  <div class="card-body">
+<div class="card-header">Enrollments Page</div>
+<div class="card-body">
 
-      <form action="{{ url('enrollments') }}" method="post">
+    <form action="{{ url('enrollments') }}" method="post">
         {!! csrf_field() !!}
         <label>Enroll No</label><br>
         <input type="text" name="enroll_no" id="enroll_no" class="form-control"><br>
         <label>Batch Id</label><br>
         <select name="batch_id" id="batch_id" class="form-control">
-          @foreach ($batches as $id => $name)
-          <option value="{{$id}}">{{ $name }}</option>
-          @endforeach
+        @foreach ($batches as $id => $name)
+        <option value="{{$id}}">{{ $name }}</option>
+        @endforeach
         </select>
 
         <label>Student Id</label><br>
             <select name="student_id" id="student_id" class="form-control">
-              @foreach ($students as $id => $name)
-              <option value="{{$id}}">{{ $name }}</option>
-              @endforeach
+            @foreach ($students as $id => $name)
+            <option value="{{$id}}">{{ $name }}</option>
+            @endforeach
             </select>
 
             <label for="join_date">Join Date</label><br>
@@ -30,7 +30,7 @@
         <input type="submit" value="Save" class="btn btn-success"><br>
     </form>
 
-  </div>
+</div>
 </div>
 
 @stop

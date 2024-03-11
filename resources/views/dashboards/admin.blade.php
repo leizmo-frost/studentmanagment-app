@@ -1,4 +1,6 @@
+@extends('layout')
 
+@section('content')
 
 <div class="w-full block mt-8">
     <div class="flex flex-wrap sm:flex-no-wrap justify-between">
@@ -48,3 +50,5 @@
 
     </div>
 </div>
+
+@endsection
