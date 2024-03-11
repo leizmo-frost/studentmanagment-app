@@ -83,14 +83,14 @@
             <div class="col-md-3">
                 <!-- The sidebar -->
                 <div class="sidebar">
-                    <a class="active" href="#home">Home</a>
-                    <a href="{{ url('/dashboards') }}">Dashboard</a>
-                    <a href="{{ url('/students') }}">Student</a>
-                    <a href="{{ url('/teachers') }}">Teacher</a>
-                    <a href="{{ url('/courses') }}">Courses</a>
-                    <a href="{{ url('/batches') }}">Batches</a>
-                    <a href="{{ url('/enrollments') }}">Enrollments</a>
-                    <a href="{{ url('/payments') }}">Payment</a>
+                    <a class="active" href="/welcome">Home</a>
+                    <a href="/dashboards">Dashboard</a>
+                    <a href="/students">Student</a>
+                    <a href="/teachers">Teacher</a>
+                    <a href="/courses">Courses</a>
+                    <a href="/batches">Batches</a>
+                    <a href="/enrollments">Enrollments</a>
+                    <a href="/payments">Payment</a>
                 </div>
             </div>
             <div class="col-md-9">
