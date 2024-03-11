@@ -83,23 +83,39 @@
             <div class="col-md-3">
                 <!-- The sidebar -->
                 <div class="sidebar">
-                    <a class="active" href="/welcome">Home</a>
-                    <a href="/dashboards">Dashboard</a>
+                    <a class="active" href="/">Home</a>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                            Dashboard
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item active" href="/dashboards">Admin</a></li>
+                            <li><a class="dropdown-item" href="/dashboards">Parents</a></li>
+                            <li><a class="dropdown-item" href="/dashboards">Student</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
                     <a href="/students">Student</a>
                     <a href="/teachers">Teacher</a>
+                    <a href="/departments">Department</a>
                     <a href="/courses">Courses</a>
                     <a href="/batches">Batches</a>
                     <a href="/enrollments">Enrollments</a>
                     <a href="/payments">Payment</a>
+                    <a href="/timetables">Timetables</a>
                     <a href="/exams">Exams</a>
+                    <a href="/events">Events</a>
+                    <a href="/settings">Settings</a>
                 </div>
             </div>
             <div class="col-md-9">
                 <!-- Page content -->
-                @yield('content')
+                @include('home.welcome')
             </div>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
