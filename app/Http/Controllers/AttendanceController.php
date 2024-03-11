@@ -7,6 +7,9 @@ use App\Teacher;
 use Carbon\Carbon;
 use App\Attendance;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\View\View;
+use App\Models\AttendanceController;
 
 class AttendanceController extends Controller
 {
@@ -17,11 +20,11 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $months = Attendance::select('attendence_date')
-                            ->orderBy('attendence_date')
+        $months = Attendance::select('attendance_date')
+                            ->orderBy('attendance_date')
                             ->get()
                             ->groupBy(function ($val) {
-                                return Carbon::parse($val->attendence_date)->format('m');
+                                return Carbon::parse($val->attendance_date)->format('m');
                             });
 
         if( request()->has(['type', 'month']) ) {
@@ -29,19 +32,19 @@ class AttendanceController extends Controller
             $month = request()->input('month');
 
             if($type == 'class') {
-                $attendances = Attendance::whereMonth('attendence_date', $month)
-                                     ->select('attendence_date','student_id','attendence_status','class_id')
-                                     ->orderBy('class_id','asc')
-                                     ->get()
-                                     ->groupBy(['class_id','attendence_date']);
+                $attendances = Attendance::whereMonth('attendance_date', $month)
+                                    ->select('attendance_date','student_id','attendance_status','class_id')
+                                    ->orderBy('class_id','asc')
+                                    ->get()
+                                    ->groupBy(['class_id','attendance_date']);
 
-                return view('backend.attendance.index', compact('attendances','months'));
+                return view('attendance.index', compact('attendance','months'));
 
             }
-            
+
         }
         $attendances = [];
-        
+
         return view('backend.attendance.index', compact('attendances','months'));
     }
 
@@ -52,7 +55,7 @@ class AttendanceController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     public function createByTeacher($classid)
@@ -78,38 +81,38 @@ class AttendanceController extends Controller
 
         if($teacher->id !== $class->teacher_id) {
             return redirect()->route('teacher.attendance.create',$classid)
-                             ->with('status', 'You are not assign for this class attendence!');
+                            ->with('status', 'You are not assign for this class attendence!');
         }
 
-        $dataexist = Attendance::whereDate('attendence_date',$attenddate)
+        $dataexist = Attendance::whereDate('attendance_date',$attenddate)
                                 ->where('class_id',$classid)
                                 ->get();
 
         if (count($dataexist) !== 0 ) {
             return redirect()->route('teacher.attendance.create',$classid)
-                             ->with('status', 'Attendance already taken!');
+                            ->with('status', 'Attendance already taken!');
         }
 
         $request->validate([
             'class_id'      => 'required|numeric',
             'teacher_id'    => 'required|numeric',
-            'attendences'   => 'required'
+            'attendances'   => 'required'
         ]);
 
-        foreach ($request->attendences as $studentid => $attendence) {
+        foreach ($request->attendances as $studentid => $attendance) {
 
-            if( $attendence == 'present' ) {
-                $attendence_status = true;
-            } else if( $attendence == 'absent' ){
-                $attendence_status = false;
+            if( $attendance == 'present' ) {
+                $attendance_status = true;
+            } else if( $attendance == 'absent' ){
+                $attendance_status = false;
             }
 
             Attendance::create([
                 'class_id'          => $request->class_id,
                 'teacher_id'        => $request->teacher_id,
                 'student_id'        => $studentid,
-                'attendence_date'   => $attenddate,
-                'attendence_status' => $attendence_status
+                'attendance_date'   => $attenddate,
+                'attendance_status' => $attendance_status
             ]);
         }
 
