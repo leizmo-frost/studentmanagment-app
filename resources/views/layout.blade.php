@@ -91,6 +91,7 @@
                     <a href="/batches">Batches</a>
                     <a href="/enrollments">Enrollments</a>
                     <a href="/payments">Payment</a>
+                    <a href="/exams">Exams</a>
                 </div>
             </div>
             <div class="col-md-9">
