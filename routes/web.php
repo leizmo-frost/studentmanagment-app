@@ -38,9 +38,8 @@ Route::resource("/payments", PaymentController::class);
 
 Route::get('/report/report/{pid}', [ReportController::class, 'report']);
 
-Route::get("/logins", function (){
-    return view(view: "home.logins");
-});
+Route::get('/get-logins-form', function () {
+    return view('auth.logins');});
 
 Route::get("/registrations", function (){
     return view(view: "home.registrations");

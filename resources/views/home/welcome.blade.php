@@ -58,7 +58,7 @@
     <header>
         <!-- Logo or Image -->
         <div>
-            <h1>Welcome to Student Home Page</h1>
+            <h1 class="bold">Welcome</h1>
         </div>
         <!-- Login and Register Tabs -->
         <div class="login-register">
@@ -89,6 +89,27 @@
                 form.classList.remove('active-form');
             });
             document.getElementById(formId).classList.add('active-form');
+
+            // If registration form is being displayed, load it from file
+            if (formId === 'registrations') {
+                document.getElementById('registrations').innerblade = ''; // Clear previous content
+                fetch('auth.registrations.blade') // Fetch registration form HTML
+                    .then(response => response.text())
+                    .then(blade => {
+                        document.getElementById('registrations').innerblade = blade;
+                    })
+                    .catch(error => console.error('Error fetching registration form:', error));
+            }
+            // If login form is being displayed, load it from file
+            else if (formId === 'logins') {
+                document.getElementById('logins').innerblade = ''; // Clear previous content
+                fetch('auth.logins.blade') // Fetch login form HTML
+                    .then(response => response.text())
+                    .then(blade => {
+                        document.getElementById('logins').innerblade = blade;
+                    })
+                    .catch(error => console.error('Error fetching login form:', error));
+            }
         }
 
         // JavaScript to display current date and time
