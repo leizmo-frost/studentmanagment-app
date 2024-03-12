@@ -14,7 +14,7 @@
                 </a>
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="table w-full mt-8 bg-white rounded">
             <form action="{{ route('student.store') }}" method="POST" class="w-full max-w-xl px-6 py-12" enctype="multipart/form-data">
                 @csrf
@@ -89,7 +89,7 @@
                             Gender
                         </label>
                     </div>
-                    <!-- Log on to codeastro.com for more projects -->
+
                     <div class="md:w-2/3">
                         <div class="flex flex-row items-center">
                             <label class="block text-gray-500 font-bold">
@@ -208,15 +208,15 @@
                         </button>
                     </div>
                 </div>
-            </form>        
+            </form>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+        
     </div>
 @endsection
 
 @push('scripts')
 <script>
-    $(function() {       
+    $(function() {
         $( "#datepicker-sc" ).datepicker({ dateFormat: 'yy-mm-dd' });
     })
 </script>

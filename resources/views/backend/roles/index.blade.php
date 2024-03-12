@@ -17,7 +17,7 @@
                 </a>
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="mt-8 bg-white rounded border-b-4 border-gray-300">
             <div class="flex flex-wrap items-center uppercase text-sm font-semibold bg-gray-600 text-white rounded-tl rounded-tr">
                 <div class="w-3/12 px-4 py-3">Role</div>
@@ -41,5 +41,5 @@
             @endforeach
         </div>
     </div>
-    <!-- Log on to codeastro.com for more projects -->
+    
 @endsection

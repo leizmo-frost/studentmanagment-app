@@ -18,7 +18,7 @@
                 </a>
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="table w-full mt-8 bg-white rounded">
             <form action="{{ route('role.store') }}" method="POST" class="w-full max-w-lg px-6 py-12">
                 @csrf
@@ -62,8 +62,8 @@
                         </button>
                     </div>
                 </div>
-            </form>        
+            </form>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+        
     </div>
 @endsection

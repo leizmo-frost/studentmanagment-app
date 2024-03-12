@@ -14,7 +14,7 @@
                 </a>
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="table w-full mt-8 bg-white rounded">
             <form action="{{ route('subject.update',$subject->id) }}" method="POST" class="w-full max-w-xl px-6 py-12">
                 @csrf
@@ -85,7 +85,7 @@
                         @enderror
                     </div>
                 </div>
-                <!-- Log on to codeastro.com for more projects -->
+                
                 <div class="md:flex md:items-center">
                     <div class="md:w-1/3"></div>
                     <div class="md:w-2/3">
@@ -94,8 +94,8 @@
                         </button>
                     </div>
                 </div>
-            </form>        
+            </form>
         </div>
-        
+
     </div>
 @endsection
