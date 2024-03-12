@@ -60,10 +60,12 @@ Route::group(['middleware' => ['auth','role:Admin']], function ()
 
     Route::resource('assignrole', 'RoleAssign');
     Route::resource('classes', 'GradeController');
-    Route::resource('subject', 'SubjectController');
-    Route::resource('teacher', 'TeacherController');
+    Route::resource('subjects', 'SubjectController');
+    Route::resource('teachers', 'TeacherController');
     Route::resource('parents', 'ParentsController');
-    Route::resource('student', 'StudentController');
+    Route::resource('students', 'StudentController');
+    Route::resource('departments', 'DepartmentController');
+    Route::resource('students', 'StudentController');
     Route::get('attendance', 'AttendanceController@index')->name('attendance.index');
 
 });
@@ -82,3 +84,10 @@ Route::group(['middleware' => ['auth','role:Parent']], function ()
 Route::group(['middleware' => ['auth','role:Student']], function () {
 
 });
+
+// In your routes file (e.g., web.php)
+
+Route::get('/', function () {
+    // Your home route logic here
+})->name('home');
+

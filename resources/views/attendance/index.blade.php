@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts')
 
 @section('content')
     <div class="create">

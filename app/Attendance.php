@@ -10,8 +10,8 @@ class Attendance extends Model
         'class_id',
         'teacher_id',
         'student_id',
-        'attendence_date',
-        'attendence_status'
+        'attendance_date',
+        'attendance_status'
     ];
 
     public function student() {
