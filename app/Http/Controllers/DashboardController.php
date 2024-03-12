@@ -8,8 +8,8 @@ use Illuminate\View\View;
 use App\Models\Dashboard;
 class DashboardController extends Controller
 {
-    public function admin() : View
+    public function index() : View
     {
-        return view('dashboards.admin');
+        return view('dashboards.index');
     }
 }

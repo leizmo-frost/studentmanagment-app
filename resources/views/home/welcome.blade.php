@@ -55,7 +55,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="mt-3">
         <!-- Logo or Image -->
         <div>
             <h1 class="bold">Welcome</h1>
@@ -103,7 +103,7 @@
             // If login form is being displayed, load it from file
             else if (formId === 'logins') {
                 document.getElementById('logins').innerblade = ''; // Clear previous content
-                fetch('auth.logins.blade') // Fetch login form HTML
+                fetch('auth.logins') // Fetch login form HTML
                     .then(response => response.text())
                     .then(blade => {
                         document.getElementById('logins').innerblade = blade;

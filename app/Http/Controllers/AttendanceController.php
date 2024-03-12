@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Grade;
-use App\Teacher;
 use Carbon\Carbon;
 use App\Attendance;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\View\View;
-use App\Models\AttendanceController;
+use Illuminate\Contracts\View\View;
+use App\Models\Teacher;
+
 
 class AttendanceController extends Controller
 {
@@ -45,7 +44,7 @@ class AttendanceController extends Controller
         }
         $attendances = [];
 
-        return view('backend.attendance.index', compact('attendances','months'));
+        return view('attendance.index', compact('attendances','months'));
     }
 
     /**
@@ -60,9 +59,9 @@ class AttendanceController extends Controller
 
     public function createByTeacher($classid)
     {
-        $class = Grade::with(['students','subjects','teacher'])->findOrFail($classid);
+        $class = Grade::with(['students','subjects','teachers'])->findOrFail($classid);
 
-        return view('backend.attendance.create', compact('class'));
+        return view('attendance.create', compact('class'));
     }
 
     /**

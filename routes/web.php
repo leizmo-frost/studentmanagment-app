@@ -20,9 +20,7 @@ use App\Http\Controllers\ReportController;
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+
 
 Route::resource("/students", StudentController::class);
 
@@ -41,25 +39,8 @@ Route::get('/report/report/{pid}', [ReportController::class, 'report']);
 Route::get('/get-logins-form', function () {
     return view('auth.logins');});
 
-Route::get("/registrations", function (){
-    return view(view: "home.registrations");
-});
 
-Route::get("/admin", function (){
-    return view(view: "dashboards.admin");
-});
 
-Route::get("/parent", function (){
-    return view(view: "dashboards.parent");
-});
-
-Route::get("/student", function (){
-    return view(view: "dashboards.student");
-});
-
-Route::get("/teacher", function (){
-    return view(view: "dashboards.teacher");
-});
 
 Route::group(['middleware' => ['auth','role:Admin']], function ()
 {

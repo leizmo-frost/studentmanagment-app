@@ -1,7 +1,3 @@
-@extends('layout')
-
-@section('content')
-
 <div class="w-full block mt-8">
     <div class="flex flex-wrap sm:flex-no-wrap justify-between">
         <div class="w-full bg-gray-200 text-center border border-gray-300 px-8 py-6 rounded">
@@ -68,5 +64,3 @@
         </div>
     </div>
 </div> <!-- ./END TEACHER -->
-
-@endsection

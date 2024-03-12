@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('auth.logins')
 
 @section('content')
     <div class="roles-permissions">

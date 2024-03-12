@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('auth.registrations')
 
 @section('content')
     <div class="roles">
