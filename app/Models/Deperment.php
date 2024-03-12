@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Parents extends Model
+class Department extends Model
 {
-    protected $table = 'parents';
+    protected $table = 'departments';
 
     protected $fillable = [
         'user_id',
         'gender',
         'phone',
-        'current_address',
-        'permanent_address',
+        'subject',
     ];
 
     public function user()
@@ -21,8 +20,8 @@ class Parents extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function children()
+    public function subjects()
     {
-        return $this->hasMany(Student::class, 'parent_id');
+        return $this->hasMany(Subject::class, 'parent_id');
     }
 }
