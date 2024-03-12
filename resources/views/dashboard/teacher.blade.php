@@ -11,7 +11,7 @@
                 <span class="leading-tight">Classes</span>
             </h3>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+        
         <div class="w-full bg-gray-200 text-center border border-gray-300 px-8 py-6 mx-0 sm:mx-6 my-4 sm:my-0 rounded">
             <h3 class="text-gray-700 uppercase font-bold">
             <svg class="fill-current float-left" style="width:39px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96

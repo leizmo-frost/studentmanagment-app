@@ -14,7 +14,7 @@
                 </a>
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="table w-full mt-8 bg-white rounded">
             <form action="{{ route('assignrole.update',$user->id) }}" method="POST" class="w-full max-w-lg px-6 py-12">
                 @csrf
@@ -78,9 +78,9 @@
                             Update User
                         </button>
                     </div>
-                </div><!-- Log on to codeastro.com for more projects -->
-            </form>        
+                </div>
+            </form>
         </div>
-        
+
     </div>
 @endsection

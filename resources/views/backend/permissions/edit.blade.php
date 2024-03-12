@@ -18,7 +18,7 @@
                 </a>
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="mt-8 bg-white rounded">
             <form action="{{ route('permission.update',$permission->id) }}" method="POST" class="w-full max-w-lg px-6 py-12">
                 @csrf
@@ -67,8 +67,8 @@
                         </button>
                     </div>
                 </div>
-            </form>        
+            </form>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+        
     </div>
 @endsection

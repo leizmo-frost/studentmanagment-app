@@ -4,7 +4,7 @@
     <div class="permissions">
 
         <div class="flex items-center justify-between mb-6">
-            <div><!-- Log on to codeastro.com for more projects -->
+            <div>
                 <h2 class="text-gray-700 uppercase font-bold">Create Permission</h2>
             </div>
             <div class="flex flex-wrap items-center">
@@ -60,7 +60,7 @@
                         <button class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
                             Create Permission
                         </button>
-                    </div><!-- Log on to codeastro.com for more projects -->
+                    </div>
                 </div>
             </form>
         </div>
@@ -81,6 +81,6 @@
                 </div>
             @endforeach
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+        
     </div>
 @endsection

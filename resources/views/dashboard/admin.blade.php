@@ -8,7 +8,7 @@
                 <span class="leading-tight">Students</span>
             </h3>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+        
         <div class="w-full bg-gray-200 text-center border border-gray-300 px-8 py-6 mx-0 sm:mx-6 my-4 sm:my-0 rounded">
             <h3 class="text-gray-700 uppercase font-bold">
             <svg class="fill-current float-left" style="width:39px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
@@ -23,7 +23,7 @@
                 <span class="leading-tight">Parents</span>
             </h3>
         </div>
-        
+
     </div>
 </div>
 
@@ -43,6 +43,6 @@
                 <span class="leading-tight">Classes</span>
             </h3>
         </div>
-        
+
     </div>
 </div>

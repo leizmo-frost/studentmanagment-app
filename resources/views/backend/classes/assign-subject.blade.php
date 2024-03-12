@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="roles">
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="flex items-center justify-between mb-6">
             <div>
                 <h2 class="text-gray-700 uppercase font-bold">Assign Subject</h2>
@@ -49,9 +49,9 @@
                         </button>
                     </div>
                 </div>
-            </form>        
+            </form>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="w-full py-12">
             <h2 class="text-gray-700 uppercase font-bold my-2">Students</h2>
             <div class="flex items-center bg-gray-600">
@@ -69,5 +69,5 @@
                 </div>
             @endforeach
         </div>
-    </div><!-- Log on to codeastro.com for more projects -->
+    </div>
 @endsection

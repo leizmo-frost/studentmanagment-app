@@ -3,11 +3,11 @@
     <div class="w-full block mt-8 bg-white">
         <div class="flex flex-wrap sm:flex-no-wrap justify-between">
             <div class="w-full sm:w-1/2 mr-2 mb-6">
-                <!-- Log on to codeastro.com for more projects -->
+
                 <div class="md:flex md:items-center mb-3">
                     <div class="md:w-1/3">
                         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
-                            Name : 
+                            Name :
                         </label>
                     </div>
                     <div class="md:w-2/3">
@@ -94,7 +94,7 @@
                         <span class="text-gray-600 font-bold">{{ $student->permanent_address }}</span>
                     </div>
                 </div>
-                <!-- Log on to codeastro.com for more projects -->
+
                 <div class="md:flex md:items-center mb-3">
                     <div class="md:w-1/3">
                         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
@@ -135,11 +135,11 @@
                         <span class="text-gray-600 font-bold">{{ $student->parent->current_address }}</span>
                     </div>
                 </div>
-    
-    
-            </div>   
-            
-            
+
+
+            </div>
+
+
 
             <div class="w-full sm:w-1/2 mr-2 mb-6">
                 <div class="flex items-center bg-gray-600">
@@ -155,10 +155,10 @@
                     </div>
                 @endforeach
 
-                
+
             </div>
 
-            
+
 
         </div>
 
@@ -188,4 +188,4 @@
             @endforeach
         </div>
     </div>
-    <!-- Log on to codeastro.com for more projects -->
+    

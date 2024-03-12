@@ -4,7 +4,7 @@
     <div class="create">
 
         <div class="flex items-center justify-between mb-6">
-            <div><!-- Log on to codeastro.com for more projects -->
+            <div>
                 <h2 class="text-gray-700 uppercase font-bold">Attendance for class :- {{ $class->class_name }}</h2>
             </div>
             <div class="flex flex-wrap items-center">
@@ -14,7 +14,7 @@
                 </a>
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="w-full mt-8 bg-white rounded">
             <div class="flex items-center justify-between px-6 py-6 pb-0">
                 <div class="text-sm text-red-600 italic">
@@ -60,7 +60,7 @@
                         </button>
                     </div>
                 </form>
-            </div><!-- Log on to codeastro.com for more projects -->  
+            </div>
         </div>
 
     </div>

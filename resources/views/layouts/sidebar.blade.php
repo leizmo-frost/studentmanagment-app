@@ -60,7 +60,7 @@
             57 0 70.7 57.3 128 128 128s128-57.3 128-128c0-20.6-5.3-39.8-14-57l96.3-23.2c18.2-4.4 18.2-27.1 0-31.5l-190.4-46c-13-3.1-26.7-3.1-39.7 0L13.6
             48.2c-18.1 4.4-18.1 27.2 0 31.6z"></path></svg>
             <span class="ml-2 text-sm font-semibold">Students</span>
-        </a><!-- Log on to codeastro.com for more projects -->
+        </a>
         <a href="{{ route('attendance.index') }}" class="flex items-center text-gray-600 py-2 hover:text-blue-700">
             <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M128
                 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0

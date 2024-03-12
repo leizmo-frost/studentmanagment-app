@@ -17,7 +17,7 @@
                 </a>
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+
         <div class="w-full mt-8 bg-white rounded">
             <form action="{{ route('attendance.index') }}" method="GET" class="md:flex md:items-center md:justify-between px-6 py-6 pb-0">
                 <div class="md:flex md:items-center mb-6 text-gray-700 uppercase font-bold">
@@ -65,7 +65,7 @@
                     type="submit">Generate</button>
                 </div>
             </form>
-            <!-- Log on to codeastro.com for more projects -->
+
             <div class="w-full px-6 py-6">
                 @foreach ($attendances as $classid => $datevalues)
                     <h2 class="bg-gray-600 text-white font-semibold uppercase px-4 py-3">
@@ -95,6 +95,6 @@
                 @endforeach
             </div>
         </div>
-        <!-- Log on to codeastro.com for more projects -->
+        
     </div>
 @endsection
