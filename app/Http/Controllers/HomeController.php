@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Spatie\Permission\Traits\HasRoles;
 
 class HomeController extends Controller
 {
@@ -45,7 +46,7 @@ class HomeController extends Controller
             $teacher = $user->teacher()->with(['subjects', 'classes', 'students'])->firstOrFail();
 
             return view('home', compact('teacher'));
-        } elseif ($user->hasRole('Parent')) {
+        } elseif ($user->HasRoles('Parent')) {
             $parent = $user->parent()->with(['children'])->firstOrFail();
 
             return view('home', compact('parent'));

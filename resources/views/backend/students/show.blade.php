@@ -19,7 +19,7 @@
 
 
         <div class="mt-8 bg-white rounded">
-           <div class="flex flex-wrap sm:flex-no-wrap justify-between">
+        <div class="flex flex-wrap sm:flex-no-wrap justify-between">
 
             <div class="w-full sm:w-1/2 mr-2 mb-6">
 
@@ -181,6 +181,6 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 @endsection

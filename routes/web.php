@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
@@ -9,6 +9,10 @@ use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DepartmentController;
+use Illuminate\Support\Facades\Auth;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +25,19 @@ use App\Http\Controllers\DepartmentController;
 |
 */
 
-
-Route::get('/get-logins-form', function () {
-    return view('auth.logins');
+Route::get('/', function () {
+    return redirect('/login');
 });
 
-Route::get('/report/report/{pid}', [ReportController::class, 'report']);
-
+Auth::routes();
+Route::middleware(['auth'])->prefix('profile')->group(function () {
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'HomeController@profile')->name('profile');
+Route::get('/profile/edit', 'HomeController@profileEdit')->name('profile.edit');
+Route::put('/profile/update', 'HomeController@profileUpdate')->name('profile.update');
+Route::get('/profile/changepassword', 'HomeController@changePasswordForm')->name('profile.change.password');
+Route::post('/profile/changepassword', 'HomeController@changePassword')->name('profile.changepassword');
+});
 
 Route::group(['middleware' => ['auth','role:Admin']], function ()
 {
